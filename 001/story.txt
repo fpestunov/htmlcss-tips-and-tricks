@@ -1,0 +1,65 @@
+Learn Flexbox Through Examples
+https://laracasts.com/series/learn-flexbox-through-examples
+
+01 A Perfectly Centered Logo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- flex, x & y axes
+- поиграем параметрами:
+    align-items: center;
+    justify-content: center; 
+
+
+02 A Navigation Menu
+^^^^^^^^^^^^^^^^^^^^
+Which plugin transformed nav>ul>li*4>a[href=#] into HTML?
+https://github.com/sergeche/emmet-sublime
+  
+Documentation and examples:
+http://emmet.io
+
+
+    .item - div class=item 
+    nav>ul>li*4>a[href=#]
+    header>h1{Flexbox}
+    lorem
+    footer>h5{Flexbox}+p{All Rights Reserved}
+    aside>ul>li*8>a[href=#]{}
+    p{Lorem}*3
+
+- делаем меню
+- размещаем меню в центре
+
+
+03 The Bread and Butter Layout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2 способа прижать футер:
+
+    footer {
+        margin-top: auto;
+    }
+
+    main {
+        margin-bottom: auto;
+    }
+
+Добавляем медиа выражения:
+
+
+04 An Episode List
+^^^^^^^^^^^^^^^^^^
+- google icons
+
+
+05 Media Objects With Flexbox
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+06 Flexible Grids in Seconds
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+07 Separated Navigation
+^^^^^^^^^^^^^^^^^^^^^^^ 
+
+08 Form Addons
+^^^^^^^^^^^^^^ 
