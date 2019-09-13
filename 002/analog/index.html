@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Analog Clock</title>
+</head>
+<body>
+
+<canvas id="canvas" width="400" height="400" style="background-color:#333"></canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2; // Calculate the clock radius, using the height of the canvas
+ctx.translate(radius, radius); // Remap the (0,0) position (of the drawing object) to the center of the canvas
+radius = radius * 0.90; // Reduce the clock radius (to 90%) to draw the clock well inside the canvas
+drawClock();
+
+// Create a function to draw the clock
+function drawClock() {
+  ctx.arc(0, 0, radius, 0 , 2 * Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+}
+</script>
+
+</body>
+</html>
