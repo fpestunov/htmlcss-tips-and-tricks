@@ -13,7 +13,9 @@ var ctx = canvas.getContext("2d");
 var radius = canvas.height / 2; // Calculate the clock radius, using the height of the canvas
 ctx.translate(radius, radius); // Remap the (0,0) position (of the drawing object) to the center of the canvas
 radius = radius * 0.90; // Reduce the clock radius (to 90%) to draw the clock well inside the canvas
-drawClock();
+
+//drawClock();
+setInterval(drawClock, 1000);
 
 // draw the clock
 function drawClock() {
