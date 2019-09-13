@@ -15,10 +15,35 @@ ctx.translate(radius, radius); // Remap the (0,0) position (of the drawing objec
 radius = radius * 0.90; // Reduce the clock radius (to 90%) to draw the clock well inside the canvas
 drawClock();
 
-// Create a function to draw the clock
+// draw the clock
 function drawClock() {
-  ctx.arc(0, 0, radius, 0 , 2 * Math.PI);
-  ctx.fillStyle = "white";
+  drawFace(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+
+  // Draw the white circle
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+
+  // Create a radial gradient (95% and 105% of original clock radius)
+  grad = ctx.createRadialGradient(0, 0 ,radius * 0.95, 0, 0, radius * 1.05);
+  // Create 3 color stops, corresponding with the inner, middle, and outer edge of the arc:
+  // The color stops create a 3D effect.
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1; // Define the line width of the drawing object (10% of radius)
+  ctx.stroke(); // Draw the circle
+
+  // Draw the clock center
+  ctx.beginPath();
+  ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+  ctx.fillStyle = '#333';
   ctx.fill();
 }
 </script>
