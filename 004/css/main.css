@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 10px 0 0;
+    background-image: url(../img/pattern.png);
+}
+
+h2 {
+    margin: 50 auto;
+    width: 600px;
+}
+
+.image {
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 13px 13px 31px;
+    min-height: 235px;
+    width: 220px;
+    background-image: url(../img/polaroid.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.compare, .image.text {
+    font-size: 0;
+}
+
+.compare {
+    margin: 10px 0 0;
+    width: 100%;
+}
+
+.compare-left, .compare-right, .finale div {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
