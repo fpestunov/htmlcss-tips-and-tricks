@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello, SVG!</title>
+  <style type="text/css">
+    svg {
+      border: 1px solid #dddddd;
+    }
+
+    .shape-fill {
+      fill: yellowgreen;
+    }
+
+    .shape-opacity {
+      fill-opacity: 0.75;
+    }
+
+    .rect-opacity {
+      fill-opacity: 0.5;
+    }
+
+    .shape-transparent {
+      fill: none;
+    }
+
+    .shape-stroke {
+      fill: lightseagreen;
+      stroke: teal;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Оформление SVG-фигур</h1>
+  <p>Базовые понятия об оформлении SVG-фигур. Заливки и обводки.</p>
+
+  <svg width="300" height="150">
+    <circle r="60" cx="75" cy="50%" fill="#ff7700"></circle>
+    <circle r="60" cx="150" cy="50%" fill="hsla(50, 100%, 50%, 0.75)"></circle>
+    <circle class="shape-fill" r="60" cx="225" cy="50%"></circle>
+  </svg>
+
+  <svg width="300" height="150">
+    <circle r="60" cx="75" cy="50%" fill="#ff7700" fill-opacity="0.5"></circle>
+    <circle r="60" cx="150" cy="50%" fill="hsla(50, 100%, 50%, 0.75)"></circle>
+    <circle class="shape-fill shape-opacity" r="60" cx="225" cy="50%"></circle>
+  </svg>
+
+  <svg width="300" height="150">
+    <circle r="60" cx="75" cy="50%" fill="none"></circle>
+    <circle r="60" cx="150" cy="50%" fill="hsla(50, 100%, 50%, 0.75)"></circle>
+    <circle class="shape-transparent" r="60" cx="225" cy="50%"></circle>
+  </svg>
+
+  <svg width="300" height="150">
+    <circle r="60" cx="75" cy="50%" fill="gold" stroke="darkorange"></circle>
+    <circle class="shape-stroke" r="60" cx="225" cy="50%"></circle>
+  </svg>
+
+  <div>
+    <h2>Painted rectangles</h2>
+    <svg width="290" height="290">
+      <rect class="rect-1" width="42.5%" height="42.5%" x="5%" y="5%" fill="tomato"></rect>
+      <rect class="rect-2 rect-opacity" width="42.5%" height="42.5%" x="52.5%" y="5%" fill="lightseagreen"></rect>
+      <rect class="rect-3" width="42.5%" height="42.5%" x="5%" y="52.5%" fill="#ffd700"></rect>
+      <rect class="rect-4" width="42.5%" height="42.5%" x="52.5%" y="52.5%" fill="none"></rect>
+
+    </svg>
+  </div>
+
+</body>
+</html>
