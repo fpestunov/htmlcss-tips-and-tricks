@@ -28,6 +28,72 @@
       stroke: teal;
     }
 
+
+    .shape-stroke-width {
+      fill: lightseagreen;
+      stroke: teal;
+      stroke-width: 5%;
+    }
+
+
+    .shape-stroke-opacity {
+      stroke-opacity: 0.5;
+    }
+
+    /*
+      ИСПЫТАНИЯ
+      Используемые цвета:
+      yellowgreen, gold, lightseagreen
+    */
+
+    polygon {
+     fill: none;
+    }
+
+    polygon:nth-child(1) {
+    stroke: yellowgreen;
+    stroke-width: 5;
+    }
+
+    polygon:nth-child(2) {
+    stroke: gold;
+    stroke-width: 10;
+    }
+
+    polygon:nth-child(3) {
+    stroke: lightseagreen;
+    stroke-width: 30;
+    opacity: 0.5;
+    }
+
+    .shape-linecap {
+      stroke-linecap: square;
+    }
+
+    .shape-linejoin {
+      stroke-linejoin: bevel;
+    }
+
+
+    .polyline1 {
+      stroke: teal;
+      stroke-width: 80;
+      stroke-linecap: square;
+    }
+
+    .polyline2 {
+      stroke: lightseagreen;
+      stroke-width: 50;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .polyline3 {
+      stroke: gold;
+      stroke-width: 10;
+      stroke-linejoin: bevel;
+    }
+
   </style>
 </head>
 <body>
@@ -58,6 +124,45 @@
     <circle class="shape-stroke" r="60" cx="225" cy="50%"></circle>
   </svg>
 
+  <svg width="300" height="150">
+    <circle r="60" cx="75" cy="50%" fill="gold" stroke="darkorange" stroke-width="3"></circle>
+    <circle class="shape-stroke-width" r="60" cx="225" cy="50%"></circle>
+  </svg>
+
+  <svg width="300" height="150">
+    <circle r="50" cx="75" cy="75" fill="none" stroke="darkorange" stroke-width="40" stroke-opacity="0.7"></circle>
+    <circle r="50" cx="150" cy="75" fill="none" stroke="gold" stroke-width="40" stroke-opacity="0.6"></circle>
+    <circle class="shape-stroke-opacity" r="50" cx="225" cy="75" fill="none" stroke="lightseagreen" stroke-width="40"></circle>
+  </svg>
+  <br>
+  <svg width="300" height="300">
+    <line x1="40" y1="50" x2="260" y2="50" stroke-width="50" stroke="tomato" stroke-linecap="butt"></line>
+    <line x1="40" y1="150" x2="260" y2="150" stroke-width="50" stroke="gold" stroke-linecap="round"></line>
+    <line class="shape-linecap" x1="40" y1="250" x2="260" y2="250" stroke-width="50" stroke="lightseagreen"></line>
+  </svg>
+
+  <svg width="300" height="300">
+    <path d="M40,40 260,40" stroke-width="30" stroke="gold" stroke-linecap="round"></path>
+    <path d="M40,40 260,40" stroke-width="3" stroke="white" stroke-opacity=".5"></path>
+  </svg>
+
+  <svg width="300" height="300">
+    <path d="M30,30 200,85 30,120" stroke-width="30" stroke="gold" stroke-linejoin="round" fill="none"></path>
+    <path d="M30,30 200,85 30,120" stroke-width="2" fill="none" stroke="white" style="opacity: 0.5;"></path>
+  </svg>
+
+  <svg width="300" height="300">
+    <path d="M30,30 200,85 30,120" stroke-width="30" stroke="tomato" stroke-linejoin="miter" fill="none"></path>
+    <path d="M30,30 200,85 30,120" stroke-width="2" fill="none" stroke="white" style="opacity: 0.5;"></path>
+  </svg>
+
+  <svg width="300" height="400">
+    <polyline points="40,150 150,40 260,150" fill="none" stroke-width="40" stroke="tomato" stroke-linejoin="miter"></polyline>
+    <polyline points="40,260 150,150 260,260" fill="none" stroke-width="40" stroke="gold" stroke-linejoin="round"></polyline>
+    <polyline class="shape-linejoin" points="40,370 150,260 260,370" fill="none" stroke-width="40" stroke="lightseagreen"></polyline>
+  </svg>
+
+
   <div>
     <h2>Painted rectangles</h2>
     <svg width="290" height="290">
@@ -65,6 +170,32 @@
       <rect class="rect-2 rect-opacity" width="42.5%" height="42.5%" x="52.5%" y="5%" fill="lightseagreen"></rect>
       <rect class="rect-3" width="42.5%" height="42.5%" x="5%" y="52.5%" fill="#ffd700"></rect>
       <rect class="rect-4" width="42.5%" height="42.5%" x="52.5%" y="52.5%" fill="none"></rect>
+    </svg>
+  </div>
+
+  <div>
+    <h2>Толщина обводки</h2>
+    <svg width="320" height="180">
+      <polygon points="90.711 20 161.421 90.711 90.711 161.421 20 90.711"></polygon>
+      <polygon points="150.711 20 221.421 90.711 150.711 161.421 80 90.711"></polygon>
+      <polygon points="210.711 20 281.421 90.711 210.711 161.421 140 90.711"></polygon>
+    </svg>
+  </div>
+
+ <div>
+    <h2>Зигзаг</h2>
+    <p>Используя обводки с разными параметрами из двух чёрных треугольников нужно получить зигзаг.</p>
+    <p>Толщина всех обводок кратна 10. Используйте цвета teal, lightseagreen и gold.</p>
+    <svg width="340" height="240">
+      <polyline points="111 61.5 217.984 61.5 123.035 180.231 229.738 180.06"></polyline>
+      <polyline points="122 61.5 217.984 61.5 123.035 180.231 218.738 180.06"></polyline>
+      <polyline points="120 61.5 217.984 61.5 123.035 180.231 220.738 180.06"></polyline>
+    </svg>
+
+    <svg width="340" height="240" style="fill: none;">
+      <polyline points="111 61.5 217.984 61.5 123.035 180.231 229.738 180.06" stroke="teal" stroke-width="80px" stroke-linejoin="miter" stroke-linecap="square"></polyline>
+        <polyline points="122 61.5 217.984 61.5 123.035 180.231 218.738 180.06" stroke="lightseagreen" stroke-width="50px" stroke-linejoin="round" stroke-linecap="round"></polyline>
+        <polyline points="120 61.5 217.984 61.5 123.035 180.231 220.738 180.06" stroke="gold" stroke-width="10px" stroke-linejoin="bevel" stroke-linecap="butt"></polyline>
 
     </svg>
   </div>
