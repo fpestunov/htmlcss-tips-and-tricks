@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Smooth pages</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- navigation -->
+  <div id="navigation">
+    <span><a href="#sectionLink1">
+        Go to section 1
+      </a></span>
+    <span><a href="#sectionLink2">
+        Go to section 2
+      </a></span>
+    <span><a href="#sectionLink3">
+        Go to section 3
+      </a></span>
+  </div>
+  <!-- content -->
+  <div id="content">
+    <div id="section1">Section 1</div>
+    <div id="section2">Section 2</div>
+    <div id="section3">Section 3</div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      //  little hack to detect if the user is on ie 11
+      const isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+      // get all the links with an ID that starts with 'sectionLink'
+      const listOfLinks = document.querySelectorAll("a[href^='#sectionLink");
+      // loop over all the links
+      listOfLinks.forEach(function (link) {
+        // listen for a click
+        link.addEventListener('click',  () => {
+          // toggle highlight on and off when we click a link
+          listOfLinks.forEach( (link) => {
+            if (link.classList.contains('highlighted')) {
+              link.classList.remove('highlighted');
+            }
+          });
+          link.classList.add('highlighted');
+          // get the element where to scroll
+          let ref = link.href.split('#sectionLink');
+          ref = "#section" + ref[1];
+          // ie 11 does not support smooth scroll, so we will simply scroll
+          if (isIE11) {
+            window.scrollTo(0, document.querySelector(ref).offsetTop);
+          } else {
+            window.scroll({
+              behavior: 'smooth',
+              left: 0,
+              // top gets the distance from the top of the page of our target element
+              top: document.querySelector(ref).offsetTop
+            });
+          }
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>
